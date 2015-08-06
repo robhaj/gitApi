@@ -22,7 +22,6 @@ $(function(){
     var requri2   = userUrl+username2;
     var repouri1  = userUrl+username1+'/repos';
     var repouri2  = userUrl+username2+'/repos';
-    var auth = btoa("robhaj" + ":" + "roberts4s");
 
     //make ajax request1
     requestJSON(requri1, function(json) {
