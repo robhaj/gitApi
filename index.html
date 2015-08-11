@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Untitled</title>
-    
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-  </head>
-  <body>
-    
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript" src="js/main.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>GitHub API Practice</title>
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+  <section>
+  <div id="w">
+
+    <h1>Github API Webapp</h1>
+    <p>Enter a Github username and click the button to show profile.</p>
+
+    <div id="search">
+         <form id="tag-search">
+           <div class="form-group">
+           <input type="text" name="ghusername" id="ghusername" placeholder="Github username...">
+           <!-- <div class="form-group">
+           <input type="text" name="searchTerm" id="searchTerm" placeholder="SearchTerm...">
+           <div class="form-group">
+           <input type="text" name="language" id="user-language" placeholder="Language..."> -->
+           <div class="form-group">
+             <button type="submit" id="ghsubmitbtn" class="btn btn-primary btn-lg btn-block">Search</button>
+           </div>
+         </form>
+       </div>
+  </section>
+
+  <section>
+    <div id="search-results" class="text-center"></div>
+    <div id="ghapidata" class="clearfix"></div>
+  </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+</body>
 </html>
