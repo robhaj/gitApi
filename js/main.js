@@ -1,3 +1,9 @@
+// split string function
+function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substr(0,index) + chr + str.substr(index+1);
+}
+
 $(function(){
 
   $('#ghsubmitbtn').on('click', function(e){
@@ -39,13 +45,7 @@ $(function(){
           outputPageContent();
         });
 
-        var statistics;
-        $.getJSON(stats, function(json){
-          statistics = json;
-          outputPageContent();
-        });
-
-
+        //outputs content
         function outputPageContent() {
           if(repositories.length === 0) { outhtml = outhtml + '<p>No repos!</p></div>'; }
           else {
@@ -60,8 +60,32 @@ $(function(){
       } // end else statement
     }); // end requestJSON Ajax call
   }); // end click event handler
+
+  $('#ghcodesearch').on('click', function(e){
+    e.preventDefault();
+    $('#search-results').html('<div id="loader"><img src="css/loader.gif" alt="loading..."></div>');
+
+    var language = $('#user-language').val();
+    var username = $('#ghusername').val();
+    var searchTerm = $('#searchTerm').val();
+    var codeSearch  = 'https://api.github.com/search/code?q='+searchTerm+'in:file+language:'+language+'+user:'+username;
+
+    requestJSON(codeSearch, function(json) {
+      var path = json.items[0].html_url;
+        path = setCharAt(path,7,'/raw.');
+        path = setCharAt(path,17, 'busercontent');
+        path = path.replace('blob/', '');
+        $.ajax({
+          url:path,
+          success: function(data) {
+            $('#search-results').html("Code: "+data);
+          }
+        });
+    });
+  });
 });
 
+// //ajax request function
 function requestJSON(url, callback) {
   $.ajax({
     url: url,
