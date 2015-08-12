@@ -1,7 +1,17 @@
 /* add custom styles */
+  @font-face {
+        font-family: "duel";
+        src: url(Duel.ttf);
+}
+
+h1 {
+    font-size: 75px;
+    font-family: "duel";
+}
+
 #ghapidata {
   float:left;
-  margin-left:170px;
+  margin-left:275px;
   border: 5px dashed rgb(46, 113, 182);
 }
 

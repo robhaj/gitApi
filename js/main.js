@@ -1,4 +1,17 @@
 //main function
+$.ajax({
+  url: 'https://api.githunt.io/programmingexcuses',
+  success: function(data) {
+    $('#search-results').append(data);
+  }
+});
+
+$.ajax({
+  url: 'https://api.usa.gov/jobs/search.json?query=web+developer+programming+jobs+in+co',
+  success: function(data) {
+    $('#search-results').append(data);
+  }
+});
 $(function(){
 
   //player 1
@@ -18,10 +31,14 @@ $(function(){
     var repouri1  = 'https://api.github.com/users/'+username1+'/repos';
     var repouri2  = 'https://api.github.com/users/'+username2+'/repos';
 
+
+
+
     //make ajax request1
     requestJSON(requri1, function(json) {
+
       //validation
-      if(json.message == "Not Found" || username1 === '') {
+      if(json.message === "Not Found" || username1 === '') {
         $('#ghapidata').html("<h2>One or more of the users were not found!</h2>");
 
         // else we have a user and we display their info
@@ -42,28 +59,28 @@ $(function(){
         fullname = username1;
 
         //structure output
-        var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username1+'</a>)</span></h2>';
-        outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username1+'"></a></div>';
-        outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p></div>';
-        outhtml = outhtml + '<div class="repolist clearfix">';
-        outhtml = outhtml + '<p>Location: '+location+'</p>';
-
-        //repo list
-        var repositories;
+        // var outhtml = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username1+'</a>)</span></h2>';
+        // outhtml = outhtml + '<div class="ghcontent"><div class="avi"><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username1+'"></a></div>';
+        // outhtml = outhtml + '<p>Followers: '+followersnum+' - Following: '+followingnum+'<br>Repos: '+reposnum+'</p></div>';
+        // outhtml = outhtml + '<div class="repolist clearfix">';
+        // outhtml = outhtml + '<p>Location: '+location+'</p>';
+        //
 
         //outputs content
-        function outputPageContent() {
-          if(repositories.length === 0) { outhtml = outhtml + '<p>No repos!</p></div>'; }
-          else {
-            outhtml = outhtml + '<p><strong>Repos List:</strong></p> <ul>';
-            $.each(repositories, function(index) {
-              outhtml = outhtml + '<li><a href="'+repositories[index].html_url+'" target="_blank">'+repositories[index].name + '</a></li>';
-            });
-            outhtml = outhtml + '</ul></div>';
-          }
-          $('#ghapidata').html(outhtml);
+        // function outputPageContent() {
+        //   if(repositories.length === 0) { outhtml = outhtml + '<p>No repos!</p></div>'; }
+        //   else {
+        //     outhtml = outhtml + '<p><strong>Repos List:</strong></p> <ul>';
+        //     $.each(repositories, function(index) {
+        //       outhtml = outhtml + '<li><a href="'+repositories[index].html_url+'" target="_blank">'+repositories[index].name + '</a></li>';
+        //     });
+        //     outhtml = outhtml + '</ul></div>';
+        //   }
+        //   $('#ghapidata').html(outhtml);
+        //
+        // }
 
-        }
+        var repositories;
 
         $.getJSON(repouri1, function(json){
           repositories = json;
@@ -97,8 +114,6 @@ $(function(){
 
             var repositories2;
 
-
-
             function outputPageContent2() {
               if(repositories2.length === 0) { outhtml2 = outhtml2 + '<p>No repos!</p></div>'; }
               else {
@@ -112,7 +127,6 @@ $(function(){
               $('#ghapidata2').html(outhtml2);
 
             }//end outputPageContent2
-
             $.getJSON(repouri2, function(json){
               repositories2 = json;
               outputPageContent2();
@@ -136,19 +150,14 @@ $(function(){
     //       }
     //     });
     // });
-
   });//end event handler
 });//end main function
-
-
-
 
 // split string function
 function setCharAt(str,index,chr) {
   if(index > str.length-1) return str;
   return str.substr(0,index) + chr + str.substr(index+1);
 }
-
 
 // reusable ajax request function
 function requestJSON(url, callback) {
