@@ -1,1 +1,16 @@
 /* add custom styles */
+#ghapidata {
+  float:left;
+  margin-left:170px;
+  border: 5px dashed rgb(46, 113, 182);
+}
+
+#ghapidata2 {
+  border: 5px dashed rgb(46, 113, 182);
+  float:right;
+  margin-right:170px;
+}
+
+#w {
+  text-align: center;
+}

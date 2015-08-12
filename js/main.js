@@ -8,6 +8,7 @@ $(function(){
 
     //loading gif
     $('#ghapidata').html('<div id="loader"><img src="css/loader.gif" alt="loading..."></div>');
+    $('#ghapidata2').html('<div id="loader"><img src="css/loader.gif" alt="loading..."></div>');
 
     //cache api urls and usernames
     var username1 = $('#ghusername1').val();
@@ -36,6 +37,7 @@ $(function(){
         var reposnum     = json.public_repos;
 
         //default name
+        if(location === '' || location === 'undefined') {location = "Unknown";}
         if(fullname === undefined)
         fullname = username1;
 
@@ -84,6 +86,7 @@ $(function(){
             var followingnum = json.following;
             var reposnum     = json.public_repos;
 
+            if(location === '' || location === undefined) {location = "Unknown";}
             if(fullname === undefined) { fullname = username2; }
 
             var outhtml2 = '<h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username2+'</a>)</span></h2>';
@@ -106,7 +109,7 @@ $(function(){
                 outhtml2 = outhtml2 + '</ul></div>';
               }
 
-              $('#ghapidata').append(outhtml2);
+              $('#ghapidata2').html(outhtml2);
 
             }//end outputPageContent2
 
