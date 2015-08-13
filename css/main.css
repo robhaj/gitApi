@@ -1,26 +1,40 @@
 /* add custom styles */
-  @font-face {
-        font-family: "duel";
-        src: url(Duel.ttf);
+@font-face {
+  font-family: "duel";
+  src: url(Duel.ttf);
+}
+
+body {
+  background-image: url("../wildwest.jpg");
+  background-repeat: no-repeat;
+}
+
+.table {
+  background-color: rgba(255,255,255, 0.7);
+
+}
+#ghapidata {
+  width:20%;
+}
+
+#ghapidata2 {
+  width:20%;
 }
 
 h1 {
-    font-size: 75px;
-    font-family: "duel";
+  font-size: 75px;
+  font-family: "duel";
 }
 
 #ghapidata {
   float:left;
-  margin-left:275px;
-  border: 5px dashed rgb(46, 113, 182);
-}
+  margin-left:355px;}
 
-#ghapidata2 {
-  border: 5px dashed rgb(46, 113, 182);
-  float:right;
-  margin-right:170px;
-}
+  #ghapidata2 {
+    float:right;
+    margin-right:355px;
+  }
 
-#w {
-  text-align: center;
-}
+  #w {
+    text-align: center;
+  }
