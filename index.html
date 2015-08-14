@@ -11,13 +11,17 @@
 <body>
 
   <section>
+
     <audio class="audio" autoplay loop>
-      <source src="cowboy.mp3">
+      <source src="audio/cowboy.mp3">
       </audio>
+
       <audio class="colt" preload="auto">
-        <source src="colt45.mp3">
+        <source src="audio/colt45.mp3">
         </audio>
+
         <div id="w">
+
           <span class="glyphicon glyphicon-volume-off"></span>
           <span class="glyphicon glyphicon-volume-up"></span>
 
@@ -25,8 +29,11 @@
           <p>Enter two gitHub usernames and click the button compare.</p>
 
           <div id="search">
+
             <form id="tag-search">
+
               <div class="form-group">
+
                 <input type="text" name="ghusername" id="ghusername1" placeholder="Player 1 gitHub name">
                 <span> &nbsp;<strong> VS </strong>&nbsp; </span>
                 <input type="text" name="ghusername2" id="ghusername2" placeholder="Player 2 gitHub name">
@@ -35,26 +42,46 @@
                 <div class="form-group">
                 <input type="text" name="language" id="user-language" placeholder="Language...">
                 <div class="form-group"> -->
-                <button type="submit" id="ghsubmitbtn" class="btn btn-primary btn-lg">Duel</button>
+                <button type="submit" id="ghsubmitbtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Duel</button>
                 <!-- <button type="submit" id="ghcodesearch" class="btn btn-primary btn-md btn-block">Search code</button> -->
+
               </div>
             </form>
           </div>
+
         </section>
 
         <section>
           <div id="search-results" class="text-center"></div>
           <div id="ghapidata" class="clearfix"></div>
-          <div id="ghapidata2" class="clearfix2">
-          </div>
+          <div id="ghapidata2" class="clearfix2"></div>
         </section>
+        <section>
 
+<!-- Modal -->
+<!-- <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog"> -->
+    <!-- Modal content-->
+    <!-- <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="img/duel.gif" id="duelgif"></img>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+</section>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+        <script type="text/javascript" src="js/utility.js"></script>
+
         <script type="text/javascript" src="js/main.js"></script>
+
       </body>
       </html>
