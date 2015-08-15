@@ -1,8 +1,6 @@
 $(document).ready(function(){
-
   //audio controls
   audioEvents();
-
 });
 
 $(function(){
@@ -49,7 +47,7 @@ $(function(){
 
         //format timestamp
         var splitStamp = start.split('T')[0];
-        var timeCompare = setCharAt(splitStamp,4, '');
+        var timeCompare = setCharAt(splitStamp, 4, '');
         timeCompare = setCharAt(timeCompare, 6, '');
 
         //name/location validation
@@ -134,74 +132,65 @@ $(function(){
             if(fullname === undefined || fullname === null) {
               fullname = username2; }
 
-            //styling player 2 output
-            var outhtml2 = '<table class="table"><thead><tr><th><h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username2+'</a>)</span></h2></th></tr></thead>';
-            outhtml2 = outhtml2 + '<tbody><tr><td><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username2+'"></a></td></tr>';
-            outhtml2 = outhtml2 + '<tr><td>Followers:</td><td>'+followersnum2+'</td><td id="followers2"></td></tr><tr><td>Following:</td><td> '+followingnum2+'</td><td id="following2"</tr><tr><td>Repos:</td><td> '+reposnum2+'</td><td id="repos2"></td></tr>';
-            outhtml2 = outhtml2 + '<tr><td>Location:</td><td> '+location2+'</td><td id="location2"></td></tr>';
-            outhtml2 = outhtml2 + '<tr><td>Account created:</td><td>'+splitStamp2+'</td><td id="start2"></td></tr>';
+              //styling player 2 output
+              var outhtml2 = '<table class="table"><thead><tr><th><h2>'+fullname+' <span class="smallname">(@<a href="'+profileurl+'" target="_blank">'+username2+'</a>)</span></h2></th></tr></thead>';
+              outhtml2 = outhtml2 + '<tbody><tr><td><a href="'+profileurl+'" target="_blank"><img src="'+aviurl+'" width="80" height="80" alt="'+username2+'"></a></td></tr>';
+              outhtml2 = outhtml2 + '<tr><td>Followers:</td><td>'+followersnum2+'</td><td id="followers2"></td></tr><tr><td>Following:</td><td> '+followingnum2+'</td><td id="following2"</tr><tr><td>Repos:</td><td> '+reposnum2+'</td><td id="repos2"></td></tr>';
+              outhtml2 = outhtml2 + '<tr><td>Location:</td><td> '+location2+'</td><td id="location2"></td></tr>';
+              outhtml2 = outhtml2 + '<tr><td>Account created:</td><td>'+splitStamp2+'</td><td id="start2"></td></tr>';
 
-            var repositories2;
 
-            //outputs content 2
-            function outputPageContent2() {
+              //outputs content 2
+              function outputPageContent2() {
 
-              if(repositories2.length === 0) { outhtml2 = outhtml2 + '<p>No repos!</p></div>'; }
-              else {
-                var rand2 = Math.floor(Math.random() * (repositories2.length));
-                var randRepo2 = repositories2[rand2];
-                var url2 = randRepo2.html_url;
-                var rname2 = randRepo2.name;
-                var descrip2 = randRepo2.description;
-                var language2 = randRepo2.language;
-                var stargazers2 = randRepo2.stargazers_count;
+                if(repositories2.length === 0) { outhtml2 = outhtml2 + '<p>No repos!</p></div>'; }
+                else {
+                  var rand2 = Math.floor(Math.random() * (repositories2.length));
+                  var randRepo2 = repositories2[rand2];
+                  var url2 = randRepo2.html_url;
+                  var rname2 = randRepo2.name;
+                  var descrip2 = randRepo2.description;
+                  var language2 = randRepo2.language;
+                  var stargazers2 = randRepo2.stargazers_count;
 
-                if (descrip2 === '') {
+                  if (descrip2 === '')
                   descrip2 = "No description";
+
+                  outhtml2 = outhtml2 + '<tr><td>Random Repo:</td><td id ="randRepo2"><a href='+url2+'>'+rname2+'</a></td></tr>';
+                  outhtml2 = outhtml2 + '<tr><td>Stargazers:</td><td>'+stargazers2+'</td><td id=starGazers2></td></tr>';
+                  outhtml2 = outhtml2 + '<tr><td>Description:</td><td id="descrip2">'+descrip2+'</td>';
+                  outhtml2 = outhtml2 + '<tr><td>Language:</td><td id="language2">'+language2+'</td></tr>';
                 }
-                outhtml2 = outhtml2 + '<tr><td>Random Repo:</td><td id ="randRepo2"><a href='+url2+'>'+rname2+'</a></td></tr>';
-                outhtml2 = outhtml2 + '<tr><td>Stargazers:</td><td>'+stargazers2+'</td><td id=starGazers2></td></tr>';
-                outhtml2 = outhtml2 + '<tr><td>Description:</td><td id="descrip2">'+descrip2+'</td>';
-                outhtml2 = outhtml2 + '<tr><td>Language:</td><td id="language2">'+language2+'</td></tr>';
 
-              }
+                //append player 2
+                $('#ghapidata2').html(outhtml2);
 
-              //append player 2
-              $('#ghapidata2').html(outhtml2);
+                //set starting score
+                var pscore = 0;
+                var pscore2 = 0;
 
-              //set starting score
-              var pscore = 0;
-              var pscore2 = 0;
+                //compare and append bullet img
+                compareBullets(followingnum, followingnum2, '#following', '#following2');
+                compareBullets(followersnum, followersnum2, '#followers', '#followers2');
+                compareBullets(reposnum, reposnum2, '#repos', '#repos2');
+                compareBullets(timeCompare2, timeCompare, '#start', '#start2');
 
-              compareBullets(followingnum, followingnum2, '#following', '#following2');
-              compareBullets(followersnum, followersnum2, '#followers', '#followers2');
-              compareBullets(reposnum, reposnum2, '#repos', '#repos2');
-              compareBullets(timeCompare2, timeCompare, '#start', '#start2');
-
-              if (location === '' || location === 'null') {
+                if (location === '' || location === 'null')
                 appendBullets('#location2');
-              }
 
-              if (location2 === '' || location2 === 'null' || location2 === 'null' || location2 === "undefined") {
+                if (location2 === '' || location2 === 'null' || location2 === 'null' || location2 === "undefined")
                 appendBullets('#location');
-              }
 
-              //log winner
-              if (pscore > pscore2) {
-                console.log('player 1 wins');
-              } else
-              console.log('player 2 wins');
+              }//end outputPageContent2
 
-            }//end outputPageContent2
+              $.getJSON(repouri2, function(json){
+                repositories2 = json;
+                outputPageContent2();
+              });
 
-            //get second repolist json
-            $.getJSON(repouri2, function(json){
-              repositories2 = json;
-              outputPageContent2();
-            });
-          } // end else statement
-        }); // end requestJSON Ajax call
-      }//else end
-    });//end ajax call
-  });//end event handler
-});//end main function
+            } // end else statement
+          }); // end requestJSON Ajax call
+        }//else end
+      });//end ajax call
+    });//end event handler
+  });//end main function
