@@ -1,5 +1,3 @@
-
-
   // code search ajax request
   // $.ajax({
   //   url:path,
