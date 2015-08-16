@@ -2,8 +2,6 @@ $(document).ready(function(){
   //audio controls
   audioEvents();
 });
-var pscore = 0;
-var pscore2 = 0;
 
 $(function(){
   //open click handler
@@ -49,7 +47,7 @@ $(function(){
         timeCompare = setCharAt(timeCompare, 6, '');
 
         //name/location validation
-        if(location === '' || location === 'undefined') {location = "Unknown";}
+        if(location === '' || location === 'undefined' || location === null) {location = "Unknown";}
         if(fullname === undefined || fullname ===null)
         fullname = username1;
 
@@ -154,7 +152,7 @@ $(function(){
             timeCompare2 = setCharAt(timeCompare2, 6, "");
 
             //location and username validation
-            if(location2 === '' || location2 === undefined) {location = "Unknown";}
+            if(location2 === '' || location2 === 'undefined' || location2 === null) {location2 = "Unknown";}
             if(fullname === undefined || fullname === null)
               fullname = username2;
 
@@ -222,8 +220,6 @@ $(function(){
               }
 
                 //set starting score
-
-
                 //compare and append bullet img
 
                 setTimeout(function(){
@@ -263,22 +259,6 @@ $(function(){
                   playAudio($(".shot")[0]);
                 }
             }, 6000);
-
-            // setTimeout(function(){
-            //   if (stargazers > stargazers2){
-            //     appendBullets('#starGazers1');
-            //     playAudio($(".shot")[0]);
-            //   }
-            //   else if (stargazers < stargazers2){
-            //     appendBullets('#starGazers2');
-            //     playAudio($(".shot")[0]);
-            //   }
-            //   else {
-            //     appendBullets('#starGazers1');
-            //     appendBullets('#starGazers2');
-            //   playAudio($(".shot")[0]);
-            // }
-            // }, 9000);
 
           } //end outputPageContent2
 

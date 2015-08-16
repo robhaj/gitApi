@@ -8,20 +8,6 @@ function requestJSON(url, callback) {
   });
 }
 
-//modal
-// var timeout;
-//
-//   function modalAlert(message){
-//         $("#myModalLabel").text("Hey Look!");
-//         $('.modal-body').html("<img src='"+message+"'>");
-//         window.setTimeout(function(){showModal();},5000);
-//   }
-
-  // function showModal(){
-  //   console.log("HERE");
-  //   $("#myModal").modal('show');
-  // }
-
 //append loading gif function
 function loadingGif(id) {
   var styles = '<div id="loader"><img src="css/loader.gif" alt="loading..."></div>';
@@ -57,11 +43,10 @@ function appendBullets(id){
 //compare vals and append bullets
 function compareBullets(val1, val2, id, id2){
   if (val1 > val2) {
-    pscore++;
     appendBullets(id);
   } else {
-    pscore2++;
     appendBullets(id2);
+
   }
 }
 
