@@ -1,10 +1,11 @@
   // code search ajax request
-  // $.ajax({
-  //   url:path,
-  //   success: function(data) {
-  //     $('#search-results').html("Code: "+data);
-  //   }
-  // });
+  
+  $.ajax({
+    url:path,
+    success: function(data) {
+      $('#search-results').html("Code: "+data);
+    }
+  });
 
   //grab github url for matching code
   // requestJSON('https://api.github.com/users?since=135',
