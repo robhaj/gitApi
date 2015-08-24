@@ -3,6 +3,7 @@ $(document).ready(function(){
   audioEvents();
 });
 
+
 $(function(){
   //open click handler
   $('#ghsubmitbtn').on('click', function(e){

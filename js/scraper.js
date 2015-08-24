@@ -1,11 +1,7 @@
 var request = require('request');
 var cheerio = require('cheerio');
-
-    var url = 'https://github.com/robhaj';
-
-    request(url, function (error, response, html) {
-      if (!error && response.statusCode == 200) {
-        var $ = cheerio.load(html);
-        console.log($('.text-muted').last().text());
-      }
-    });
+var gs = require('github-scraper'); // require the module
+var url = 'nelsonic/followinfdfsg?page=3'; // a random dude
+gs(url, function(err, data) {
+  console.log(jsonp.data); // or what ever you want to do with the data
+});
