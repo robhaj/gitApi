@@ -10,7 +10,7 @@ function requestJSON(url, callback) {
 
 //append loading gif function
 function loadingGif(id) {
-  var styles = '<div id="loader"><img src="ass/img/loader.gif" alt="loading..."></div>';
+  var styles = '<div id="loader"><img src="css/loader.gif" alt="loading..."></div>';
   return $(id).html(styles);
 }
 
@@ -36,8 +36,8 @@ function audioEvents() {
 
 //bullethole timings
 function appendBullets(id){
-    var bullet = '<img src="ass/img/bullethole.png"></img>';
-    return $(id).html(bullet);
+  var bullet = '<img src="ass/img/bullethole.png"></img>';
+  return $(id).html(bullet);
 }
 
 //compare vals and append bullets

@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "duel";
+  src: url(Duel.ttf);
+}
+
+body {
+  background-image: url("../../ass/img/wildwest.jpg");
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 75px;
+  font-family: "duel";
+}
+
+input {
+  width: 20%;
+  text-align:center;
+}
+
+.row {
+  max-height: 50px;
+  text-overflow: scroll;
+}
+
+td {
+  max-height: 50px;
+  width:200px;
+  text-overflow:scroll;
+}
+
+#fullname2 {
+  width:40%;
+
+}
+.table {
+  overflow: scroll;
+  margin-top: 50px;
+  background-color: rgba(255,255,255, 0.7);
+}
+
+#ghub {
+  float: right
+}
+
+#topBar{
+  padding-left: 20px;
+  top:0;
+  left:0;
+  width:100%;
+  height:30px;
+  background-color: rgba(255,255,255,0.5);
+}
+
+#audioButtons {
+  position: block;
+}
+
+#heading{
+  margin-top: 100px;
+  text-align: center;
+}
