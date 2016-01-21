@@ -8,8 +8,6 @@
   "dependencies": {
     "express": "latest",
     "cheerio": "~0.12.4",
-    "request": "~2.30.0",
-    "node-fs": "~0.1.7",
-    "csv": "~0.3.6"
+    "request": "~2.30.0"
   }
 }
