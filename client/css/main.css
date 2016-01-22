@@ -6,6 +6,7 @@
 body {
   background-image: url("../../ass/img/wildwest.jpg");
   background-repeat: no-repeat;
+  background-size: 100%
 }
 
 h1 {
@@ -18,21 +19,19 @@ input {
   text-align:center;
 }
 
-.row {
+.row, td {
   max-height: 50px;
   text-overflow: scroll;
 }
 
 td {
-  max-height: 50px;
   width:200px;
-  text-overflow:scroll;
 }
 
 #fullname2 {
   width:40%;
-
 }
+
 .table {
   overflow: scroll;
   margin-top: 50px;
