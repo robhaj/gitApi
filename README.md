@@ -1,4 +1,5 @@
 ## gitDuel
+
 Use this app to compare stats from two different gitHub accounts. To recreate locally >
 - Clone this repo
 - ```npm install```
