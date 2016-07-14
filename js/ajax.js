@@ -1,5 +1,5 @@
   // code search ajax request
-  
+
   $.ajax({
     url:path,
     success: function(data) {

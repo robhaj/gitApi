@@ -1,9 +1,8 @@
 // dependencies
 var express = require('express');
-var request=require("request");
-var cheerio=require("cheerio");
+var request = require("request");
+var cheerio = require("cheerio");
 var app = express();
-
 
 // perfrom request
 app.get('/scrape/:user', function(req, res){
@@ -22,5 +21,7 @@ app.get('/scrape/:user', function(req, res){
 });
 
 app.listen('8082');
+
 console.log('Magic happens on port 8081');
+
 exports = module.exports = app;
