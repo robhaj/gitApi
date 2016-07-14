@@ -14,30 +14,38 @@ function loadingGif(id) {
   return $(id).html(styles);
 }
 
-// split string function
+function adjustScore(score1, score2) {
+  switch (true) {
+    case score === score2:
+      player1score++;
+      player2score++;
+    case score > score2:
+      player1score++;
+    case score < score2:
+      player2score++;
+  }
+}
+
 function setCharAt(str,index,chr) {
-  if(index > str.length-1) return str;
+  if(index > str.length-1) {return str;}
   return str.substr(0,index) + chr + str.substr(index+1);
 }
 
 //audio events function
 function audioEvents() {
-
-  //audio off button event
   $('.glyphicon-volume-off').on('click', function(){
-    $('.audio').prop("volume", 0);});
+    $('.audio').prop("volume", 0);
+  });
 
-    //audio on button event
-    $('.glyphicon-volume-up').on('click', function(){
-      $('.audio').prop("volume", 1);
-    }
-  );
+  $('.glyphicon-volume-up').on('click', function(){
+    $('.audio').prop("volume", 1);
+  });
 }
 
 //bullethole timings
 function appendBullets(id){
-    var bullet = '<img src="ass/img/bullethole.png"></img>';
-    return $(id).html(bullet);
+  var bullet = '<img src="ass/img/bullethole.png"></img>';
+  return $(id).html(bullet);
 }
 
 //compare vals and append bullets
@@ -46,11 +54,5 @@ function compareBullets(val1, val2, id, id2){
     appendBullets(id);
   } else {
     appendBullets(id2);
-
   }
-}
-
-//play audio
-function playAudio(audio) {
-  return audio.play();
 }
