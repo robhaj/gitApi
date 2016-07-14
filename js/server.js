@@ -13,7 +13,6 @@ app.get('/scrape/:user', function(req, res){
     if (!error && response.statusCode == 200) {
       // pass DOM to cheerio
       var $ = cheerio.load(html);
-      console.log($);
       var streak = ($('.text-muted').last().text());
       res.jsonp({ data: streak });
     }
@@ -21,7 +20,5 @@ app.get('/scrape/:user', function(req, res){
 });
 
 app.listen('8082');
-
-console.log('Magic happens on port 8081');
 
 exports = module.exports = app;
