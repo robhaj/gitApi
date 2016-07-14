@@ -42,7 +42,7 @@ function appendBullets(id){
 
 //compare vals and append bullets
 function compareBullets(val1, val2, id, id2){
-  if (val1 > val2) {
+  if (val1 < val2) {
     appendBullets(id);
   } else {
     appendBullets(id2);
