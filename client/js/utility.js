@@ -36,7 +36,7 @@ function audioEvents() {
 
 //bullethole timings
 function appendBullets(id){
-  var bullet = '<img src="ass/img/bullethole.png"></img>';
+  var bullet = '<img src="../../ass/img/bullethole.png"></img>';
   return $(id).html(bullet);
 }
 
